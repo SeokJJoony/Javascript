@@ -1,0 +1,3 @@
+*java스크립트란?
+MIME(Multipurpose Internet Mail Extensions)이란?
+파일변환을 뜻함
