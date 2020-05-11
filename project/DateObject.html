@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function myfunc(){
+                mydate = new Date()
+                myyear = mydate.getYear()
+                mymonth = mydate.getMonth()+1
+                mytoday = mydate.getDate()
+                myhour = mydate.getHours()
+                mymin = mydate.getMinutes()
+                mysec = mydate.getSeconds()
+                myday = mydate.getDay()
+
+                switch(myday)
+                {
+                    case 0:
+                        myday2 = "월"
+                        break
+                    case 1:
+                        myday2 = "화"
+                        break
+                    case 2:
+                        myday2 = "수"
+                        break
+                    case 3:
+                        myday2 = "목"
+                        break
+                    case 4:
+                        myday2 = "금"
+                        break
+                    case 5:
+                        myday2 = "토"
+                        break
+                    case 6:
+                        myday2 = "일"
+                        break
+                }
+            
+            document.write(myyear + "년")
+            document.write(mymonth + "월")
+            document.write(mydate + "일")
+            document.write(myhour + "시")
+            document.write(mymin+"분")
+            document.write(mysec + "초")
+            document.write(myday2 + "요일")
+        }
+
+        </script>
+    </head>
+    <body>
+        현재시각은 <font size = 5> <script> myfunc()</script></font>입니다.
+    </body>
+</html>
