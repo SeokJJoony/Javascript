@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+    <head>
+        <script>
+            function time() {
+                today = new Date()
+                document.myform.mybox.value = today.getHours()+"시"+today.getMinutes()+"분"+today.getSeconds()+"초"
+                window.setTimeout('time()',1000)
+            }
+        </script>
+    </head>
+    <body onLoad = "time()">
+        <h2>전자시계</h2>
+        <form name= myform>
+            <input type =text name = mybox>
+        </form>
+    </body>
+</html>
