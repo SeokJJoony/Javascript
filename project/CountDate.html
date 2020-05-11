@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function myDay(){
+                today = new Date()
+                birth = new Date()
+                birth.setYear(form_birth.y1.value)
+                birth.setMonth(form_birth.m1.value)
+                birth.setDate(form_birth.d1.value)
+
+                mytime =today.getTime() - birth.getTime() //날짜를 ms로 변환
+                days = mytime /(1000*60*60*24)
+                days = Math.round(days)
+                form_birth.d2.value = days
+            }
+        </script>
+    </head>
+    <body>
+        <form name =form_birth>
+            생일:
+            <input type = text name = y1 size = 4>년
+            <input type = text name = m1 size = 4>월
+            <input type = text name = d1 size = 4>일
+            <input type = button value = "살아온 날짜 계산" onclick = "myDay()"> <br>
+            내가 살아온 총 날짜수 : <input Type = text name = d2 size 10>
+        </form>
+    </body>
+</html>
