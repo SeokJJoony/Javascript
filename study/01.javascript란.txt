@@ -47,5 +47,28 @@ write("Hello!")
 자바스크립트를 사용하여 HTML로 짜여진 인터페이스에 이벤트 처리 기능을 부여
 이벤트의 이름 앞에 "on"이 붙어 정의된다.
 
+*JS 내장객체
+-Date 객체
+웹브라우저가 실행되는 동안에 현재 컴퓨터의 시간정보를 불러와서 사용한다.
+getDate():일을 알아내어 1~31의 값을 가져옴
+
+document.myform.mybox.value = today.getHours + ....  -> 폼 객체의 값으로 지정하는 객체
+
+window.setTimeout -> 사용자 지정시간이 경과하면 지정된 명령을 실행
+
+*String 객체
+html과 JS의 document.write로 같은 효과를 낼 수 있지만
+문자열의 길이나 검색 기능
+
+*브라우저 내장 객체
+JS 뿐만 아니라 웹 브라우저도 객체로 이루어져 있음
+window 정보 history 정보 문서가 존재하고 있는 위치에 관한 정보를 포함
+
+*history 객체
+최근에 방문한 URL 주소를 저장해 두는 객체
+
+
+
+
 
 
