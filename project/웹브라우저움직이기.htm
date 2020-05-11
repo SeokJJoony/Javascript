@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>
+        웹 브라우저 움직이기
+    </title>
+    </head>
+    <body>
+        <script>
+            window.resizeTo(400,400)
+            window.moveTo(0,0)
+            inter=setInterval("go()",1)
+            var count =1
+            var aa = 0
+            var bb=0
+            var a = 0
+            var b = 0
+            function go(){
+                if(aa == 0) a=a+2
+                if(a>screen.availWidth -400) aa=1
+                if(aa==1) a=a-2
+                if(a==0) aa=0
+                if(bb==0) b=b+2
+                if(b>screen.availHeight-400) bb=1
+                if(bb==1) b=b-2
+                if(b==0) bb=0
+                if(count<1000) window.moveTo(a,b)
+            }
+        </script>
+        <h2>
+            <font color =blue> 웹브라우저 움직이기</font>
+        </h2>
+    </body>
+</html>
