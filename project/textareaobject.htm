@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function display_event(eventName){
+                var myMessage = window.documnet.form1.textarea2.value
+                myMessage =myMessage +eventName
+                window.document.form1.textarea2.value = myMessage
+            }
+        </script>
+    </head>
+    <body>
+        <form name = form1>
+            <textarea rows= 15 cols= 40 name=textarea1
+            onchange ="display_event('onchange\n')"
+            onkeydown ="display_event('onkeydown\n')" 
+            onkeypress ="display_event('onkeypress\n')"
+            onkeyup ="display_event('onkeyup\n')">    
+            </textarea>
+            <textarea rows=15 cols=40 name=textarea2>
+            </textarea><br><br>
+            <input type = "button" value = "이벤트 텍스트영역 지우기"
+                onclick="window.document.form1.textarea2.value=''">
+        </form>
+    </body>
+</html>
