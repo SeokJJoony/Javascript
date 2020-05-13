@@ -42,4 +42,123 @@ method : 정보를 전달하는 방법을 결정
 
 *폼 객체
 웹 문서에 포함된 폼 양식 요소들을 다루기 위한 객체
- 
+form 객체는 document 객체의 하위 객체
+
+-폼 객체에 접근하는 방법
+1) 폼 태그에 지정된 폼의 이름을 사용해서 직접 객체에 접근
+2) document 객체의 forms[] 배열 속성을 사용하여 객체에 접근
+
+-폼 요소에 접근하는 방법
+1) 요소가 속한 폼이름과 요소이름을 사용하여 접근
+2) form 객체의 elements[] 속성을 사용
+
+*text 객체
+웹 문서의 로그인, 검색 창, 회원 가입 폼 등에서 값을 입력받는 텍스트 필드에 의해 생성됨
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function text_check(){
+                var myForm = document.form1
+                if(myForm.username.value == ""||myForm.userage.value==""){
+                    window.alert("모든 항목을 입력하세요")
+                    if(myForm.username.value=="")
+                    myForm.username.focus()
+                    if(myForm.userage.value=="")
+                    myForm.username.focus()
+                }
+                else alert(myForm.username.value+"님, 환영합니다.")
+            }
+        </script>
+    </head>
+    <body>
+        <h3>회원가입을 위해 다음 사항을 입력해주세요.</h3><p>
+        <form name=form1>
+        이름 : <input type = text name = username size = 10><br>
+        나이 : <input type = text name = userage size = 5><br><p>
+        <input type = button value ="입력 검사" onclick = "text_check()">
+        </form>
+    </body>
+</html>
+
+*textarea 객체
+여러 줄의 문장을 입력할 수 있는 객체
+
+<!doctype html>
+<html>
+    <head>
+        <script>
+            var radCpuSpeedIndex=0
+            function radCPUSpeedonclick(radIndex){
+                var returnValue = true
+                if(radIndex ==1){
+                    returnValue = false
+                    alert("선택하신 프로세서는 현재 구매가 안됩니다.")
+                    document.form1.radCPUSpeed[radCpuSpeedIndex].checked =true
+                }
+                else
+                radCpuSpeedIndex=radIndex
+
+                return returnValue
+            }
+
+            function butCheckonclick(){
+                var controlIndex
+                var element
+                var numberOfControls = document.form1.length
+                var compSpec = "손님께서 선택하신 프로세서는"
+                compSpec += document.form1.radCPUSpeed[radCpuSpeedIndex].value
+                compSpec += "\n이며, 추가로 선택하신 부품은 다음과 같습니다 \n"
+                for(controlIndex = 0; controlIndex <numberOfControls;controlIndex++){
+                    element = document.form1[controlIndex]
+                    if(element.type =="checkbox"){
+                        if(element.checked == true)
+                        compSpec = compSpec+element.value +"\n"
+                    }
+                }
+                alert(compSpec)
+            }
+        </script>
+    </head>
+    <body>
+        <form name = form1>
+            <p>
+            구입하고자 하는 부품을 선택하세요    
+            <br><br>
+            <table>
+                <tr>
+                    <td>DVD-ROM</td>
+                    <td><input type = "checkbox" name = chkDVD value = "DVD-ROM"></td>
+                </tr>
+                <tr>
+                    <td>CD-ROM</td>
+                    <td><input type = "checkbox" name = chkCD value = "CD-ROM"></td>
+                </tr>
+                <tr>
+                    <td>Zip Drive</td>
+                    <td><input type = "checkbox" name = ZipDrive value = "Zip Drive"></td>
+                </tr>
+            </table>
+            <p>
+            원하시는 CPU의 속도를 선택하세요
+            <table>
+                <tr>
+                    <td><input type = "radio" name = radCPUSpeed CHECKED onclick="return radCPUSpeedonclick(0)" value = "800 Mhz"></td>
+                    <td>800 Mhz</td>
+                    <td><input type = "radio" name = radCPUSpeed onclick="return radCPUSpeedonclick(1)" value ="1 Ghz"></td>
+                    <td>1 Ghz</td>
+                    <td><input type = "radio" name = radCPUSpeed onclick="return radCPUSpeedonclick(2)" value = "1.5 Ghz"></td>
+                    <td>1.5 Ghz</td>
+                </tr>
+            </table>
+            <input type ="button" value = "구입 확인" name = butcheck onclick = "return butCheckonclick()">    
+        </form>
+    </body>
+</html>
+
+라디오버튼의 name을 통일하는 이유? 하나의 그룹으로 묶어 중복 선택을 못하게 하기 위해!
+대소문자 주의!
+
+
+
