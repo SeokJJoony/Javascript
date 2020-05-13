@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+    <head>
+        <script>
+            var radCpuSpeedIndex=0
+            function radCPUSpeedonclick(radIndex){
+                var returnValue = true
+                if(radIndex ==1){
+                    returnValue = false
+                    alert("선택하신 프로세서는 현재 구매가 안됩니다.")
+                    document.form1.radCPUSpeed[radCpuSpeedIndex].checked =true
+                }
+                else
+                radCpuSpeedIndex=radIndex
+
+                return returnValue
+            }
+
+            function butCheckonclick(){
+                var controlIndex
+                var element
+                var numberOfControls = document.form1.length
+                var compSpec = "손님께서 선택하신 프로세서는"
+                compSpec += document.form1.radCPUSpeed[radCpuSpeedIndex].value
+                compSpec += "\n이며, 추가로 선택하신 부품은 다음과 같습니다 \n"
+                for(controlIndex = 0; controlIndex <numberOfControls;controlIndex++){
+                    element = document.form1[controlIndex]
+                    if(element.type =="checkbox"){
+                        if(element.checked == true)
+                        compSpec = compSpec+element.value +"\n"
+                    }
+                }
+                alert(compSpec)
+            }
+        </script>
+    </head>
+    <body>
+        <form name = form1>
+            <p>
+            구입하고자 하는 부품을 선택하세요    
+            <br><br>
+            <table>
+                <tr>
+                    <td>DVD-ROM</td>
+                    <td><input type = "checkbox" name = chkDVD value = "DVD-ROM"></td>
+                </tr>
+                <tr>
+                    <td>CD-ROM</td>
+                    <td><input type = "checkbox" name = chkCD value = "CD-ROM"></td>
+                </tr>
+                <tr>
+                    <td>Zip Drive</td>
+                    <td><input type = "checkbox" name = ZipDrive value = "Zip Drive"></td>
+                </tr>
+            </table>
+            <p>
+            원하시는 CPU의 속도를 선택하세요
+            <table>
+                <tr>
+                    <td><input type = "radio" name = radCPUSpeed CHECKED onclick="return radCPUSpeedonclick(0)" value = "800 Mhz"></td>
+                    <td>800 Mhz</td>
+                    <td><input type = "radio" name = radCPUSpeed onclick="return radCPUSpeedonclick(1)" value ="1 Ghz"></td>
+                    <td>1 Ghz</td>
+                    <td><input type = "radio" name = radCPUSpeed onclick="return radCPUSpeedonclick(2)" value = "1.5 Ghz"></td>
+                    <td>1.5 Ghz</td>
+                </tr>
+            </table>
+            <input type ="button" value = "구입 확인" name = butcheck onclick = "return butCheckonclick()">    
+        </form>
+    </body>
+</html>
