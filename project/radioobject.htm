@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function answer(obj){
+            if(obj[2].checked==true)
+            alert("정답입니다.")
+            else
+            alert("오답입니다..")
+        }
+    </script>
+</head>
+<body>
+    <h3><b>이순신 장군이 활약했던 시대는?</b></h3><br>
+    <form name = "form1">
+        <input type = radio name = "history"> 삼국시대 <br>
+        <input type = radio name = "history"> 6.25 전쟁 <br>
+        <input type = radio name = "history"> 조선 <br>
+        <input type = radio name = "history"> 고려 <br>
+        <input type = radio name = "history"> 삼국시대 <br>
+        <input type = button value = "제출" onclick = "answer(this.form.history)">
+    </form>
+</body>
+</html>
