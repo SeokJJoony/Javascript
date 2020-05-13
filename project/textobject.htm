@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function text_check(){
+                var myForm = document.form1
+                if(myForm.username.value == ""||myForm.userage.value==""){
+                    window.alert("모든 항목을 입력하세요")
+                    if(myForm.username.value=="")
+                    myForm.username.focus()
+                    if(myForm.userage.value=="")
+                    myForm.userage.focus()
+                }
+                else alert(myForm.username.value+"님, 환영합니다.")
+            }
+        </script>
+    </head>
+    <body>
+        <h3>회원가입을 위해 다음 사항을 입력해주세요.</h3><p>
+        <form name=form1>
+        이름 : <input type = text name = username size = 10><br>
+        나이 : <input type = text name = userage size = 5><br><p>
+        <input type = button value ="입력 검사" onclick = "text_check()">
+        </form>
+    </body>
+</html>
