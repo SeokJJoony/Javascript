@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function mychange(obj){
+                window.alert("출발역을 "+ obj.options[obj.selectedIndex].text+"로 변경하였습니다.")
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <select name = sel onchange = "mychange(sel)">
+            <option>서울</option>
+            <option>부산</option>
+            <option>대구</option>
+            <option>대전</option>
+            <option>울산</option>
+            </select>
+        </form>    
+    </body>
+</html>
